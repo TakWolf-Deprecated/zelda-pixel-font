@@ -27,3 +27,51 @@ def verify_glyph_files(font_config):
 
         glyph_util.save_glyph_data_to_png(glyph_data, glyph_file_path)
         logger.info(f'format glyph file {glyph_file_path}')
+
+
+def collect_glyph_files(font_config):
+    alphabet = set()
+    glyph_file_paths = {}
+
+    glyphs_dir = os.path.join(path_define.glyphs_dir, font_config.output_name)
+    for glyph_file_name in os.listdir(glyphs_dir):
+        if not glyph_file_name.endswith('.png'):
+            continue
+        glyph_file_path = os.path.join(glyphs_dir, glyph_file_name)
+        c_name = glyph_file_name.removesuffix('.png')
+        if c_name == 'notdef':
+            glyph_file_paths['.notdef'] = glyph_file_path
+            continue
+        elif c_name == 'space':
+            c = ' '
+        elif c_name == 'full_stop':
+            c = '.'
+        else:
+            c = c_name
+        alphabet.add(c)
+        glyph_file_paths[ord(c)] = glyph_file_path
+
+    fallback_letter_offsets = [code_point - ord('A') for code_point in [ord('a'), ord('Ａ'), ord('ａ')]]
+    for code_point in range(ord('A'), ord('Z') + 1):
+        c = chr(code_point)
+        if c not in alphabet:
+            continue
+        for fallback_letter_offset in fallback_letter_offsets:
+            fallback_code_point = code_point + fallback_letter_offset
+            fallback_c = chr(fallback_code_point)
+            alphabet.add(fallback_c)
+            glyph_file_paths[fallback_code_point] = glyph_file_paths[code_point]
+
+    fallback_number_offset = ord('０') - ord('0')
+    for code_point in range(ord('0'), ord('9') + 1):
+        c = chr(code_point)
+        if c not in alphabet:
+            continue
+        fallback_code_point = code_point + fallback_number_offset
+        fallback_c = chr(fallback_code_point)
+        alphabet.add(fallback_c)
+        glyph_file_paths[fallback_code_point] = glyph_file_paths[code_point]
+
+    alphabet = list(alphabet)
+    alphabet.sort()
+    return alphabet, glyph_file_paths
