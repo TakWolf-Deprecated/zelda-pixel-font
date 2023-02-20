@@ -1,0 +1,10 @@
+[font]
+display_name = "Sheikah"
+unique_name = "Sheikah"
+alphabet_name = "Sheikah Language"
+
+px = 15
+line_height_px = 15
+box_origin_y_px = 14
+x_height_px = 14
+cap_height_px = 14

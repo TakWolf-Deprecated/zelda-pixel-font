@@ -1,0 +1,10 @@
+[font]
+display_name = "Sheikah Mini Smooth"
+unique_name = "Sheikah-Mini-Smooth"
+alphabet_name = "Sheikah Language"
+
+px = 8
+line_height_px = 8
+box_origin_y_px = 7
+x_height_px = 7
+cap_height_px = 7
