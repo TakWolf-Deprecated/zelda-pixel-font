@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Sheikah;
+  src: url("../fonts/zelda-pixel-sheikah.woff2");
+}
+@font-face {
+  font-family: Sheikah-Mini;
+  src: url("../fonts/zelda-pixel-sheikah-mini.woff2");
+}
+@font-face {
+  font-family: Sheikah-Mini-Smooth;
+  src: url("../fonts/zelda-pixel-sheikah-mini-smooth.woff2");
+}
+.font-sheikah {
+  font-family: Sheikah, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  word-break: break-all;
+}
+
+.font-sheikah-mini {
+  font-family: Sheikah-Mini, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  word-break: break-all;
+}
+
+.font-sheikah-mini-smooth {
+  font-family: Sheikah-Mini-Smooth, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  word-break: break-all;
+}
+
+body {
+  background-color: #5e4d44;
+}
+
+@keyframes text-light {
+  0% {
+    color: #136abe;
+  }
+  30% {
+    color: #84c5fd;
+    text-shadow: 0 0 6px #c3d3ff;
+  }
+  60% {
+    color: #136abe;
+  }
+  100% {
+    color: #136abe;
+  }
+}
+p {
+  margin: 32px;
+  padding: 16px;
+  background-color: #b69547;
+  border-radius: 16px;
+  animation: text-light 4s infinite linear;
+}
+
+/*# sourceMappingURL=index.css.map */
