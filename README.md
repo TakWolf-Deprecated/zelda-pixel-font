@@ -5,3 +5,9 @@
 [![Releases](https://img.shields.io/github/v/release/TakWolf/zelda-pixel-font)](https://github.com/TakWolf/zelda-pixel-font/releases)
 
 https://zelda-pixel-font.takwolf.com
+
+## Dependencies
+
+- [FontTools](https://github.com/fonttools/fonttools)
+- [Brotli](https://github.com/google/brotli)
+- [PyPNG](https://gitlab.com/drj11/pypng)
