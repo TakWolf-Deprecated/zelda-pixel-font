@@ -8,6 +8,5 @@ https://zelda-pixel-font.takwolf.com
 
 ## Dependencies
 
-- [FontTools](https://github.com/fonttools/fonttools)
-- [Brotli](https://github.com/google/brotli)
+- [Pixel Font Builder](https://github.com/TakWolf/pixel-font-builder)
 - [PyPNG](https://gitlab.com/drj11/pypng)
