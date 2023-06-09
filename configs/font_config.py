@@ -86,7 +86,7 @@ class FontConfig:
         return self.box_origin_y_px * self.px_units
 
     def get_vertical_metrics(self):
-        ascent = (self.box_origin_y_px + int((self.line_height_px - self.px) / 2)) * self.px_units
+        ascent = (self.box_origin_y_px + (self.line_height_px - self.px) // 2) * self.px_units
         descent = ascent - self.line_height_px * self.px_units
         x_height = self.x_height_px * self.px_units
         cap_height = self.cap_height_px * self.px_units
