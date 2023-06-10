@@ -6,8 +6,9 @@ from configs import path_define
 
 
 class FontConfig:
-    FAMILY_NAME_FORMAT: Final[str] = 'Zelda Pixel {font_name}'
     VERSION: Final[str] = '1.1.0'
+    FAMILY_NAME_FORMAT: Final[str] = 'Zelda Pixel {font_name}'
+    ZIP_OUTPUTS_NAME: Final[str] = 'zelda-pixel-font'
     MANUFACTURER: Final[str] = 'TakWolf'
     DESIGNER: Final[str] = 'TakWolf'
     DESCRIPTION_FORMAT: Final[str] = 'The Legend of Zelda - Pixel Font: {alphabet_name}'
