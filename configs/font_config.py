@@ -6,7 +6,7 @@ from configs import path_define
 
 
 class FontConfig:
-    VERSION: Final[str] = '1.1.0'
+    VERSION: Final[str] = '1.2.0'
     FAMILY_NAME_FORMAT: Final[str] = 'Zelda Pixel {font_name}'
     ZIP_OUTPUTS_NAME: Final[str] = 'zelda-pixel-font'
     MANUFACTURER: Final[str] = 'TakWolf'
