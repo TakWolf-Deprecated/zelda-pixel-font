@@ -26,7 +26,7 @@ def format_glyph_files(font_config: FontConfig):
                 glyph_data.insert(0, [0 for _ in range(glyph_width)])
                 glyph_data.append([0 for _ in range(glyph_width)])
         glyph_util.save_glyph_data_to_png(glyph_data, glyph_file_path)
-        logger.info(f"Format glyph file: '{glyph_file_path}'")
+        logger.info("Format glyph file: '%s'", glyph_file_path)
 
 
 def collect_glyph_files(font_config: FontConfig) -> tuple[dict[int, str], dict[str, str]]:
@@ -116,14 +116,14 @@ def make_font_files(font_config: FontConfig, character_mapping: dict[int, str], 
     otf_builder = builder.to_otf_builder()
     otf_file_path = os.path.join(font_config.outputs_dir, f'{font_config.full_outputs_name}.otf')
     otf_builder.save(otf_file_path)
-    logger.info(f"Make font file: '{otf_file_path}'")
+    logger.info("Make font file: '%s'", otf_file_path)
     otf_builder.font.flavor = 'woff2'
     woff2_file_path = os.path.join(font_config.outputs_dir, f'{font_config.full_outputs_name}.woff2')
     otf_builder.save(woff2_file_path)
-    logger.info(f"Make font file: '{woff2_file_path}'")
+    logger.info("Make font file: '%s'", woff2_file_path)
     ttf_file_path = os.path.join(font_config.outputs_dir, f'{font_config.full_outputs_name}.ttf')
     builder.save_ttf(ttf_file_path)
-    logger.info(f"Make font file: '{ttf_file_path}'")
+    logger.info("Make font file: '%s'", ttf_file_path)
     bdf_file_path = os.path.join(font_config.outputs_dir, f'{font_config.full_outputs_name}.bdf')
     builder.save_bdf(bdf_file_path)
-    logger.info(f"Make font file: '{bdf_file_path}'")
+    logger.info("Make font file: '%s'", bdf_file_path)

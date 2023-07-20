@@ -18,4 +18,4 @@ def make_release_zips():
             for font_config in configs.font_configs:
                 font_file_name = f'{font_config.full_outputs_name}.{font_format}'
                 file.write(os.path.join(font_config.outputs_dir, font_file_name), os.path.join(font_config.outputs_name, font_file_name))
-        logger.info(f"Make release zip: '{file_path}'")
+        logger.info("Make release zip: '%s'", file_path)
