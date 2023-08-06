@@ -43,12 +43,14 @@ class FontConfig:
         self.description = FontConfig.DESCRIPTION_FORMAT.format(alphabet_name=alphabet_name)
 
         self.size: int = config_data['size']
-        self.line_height: int = config_data['line_height']
+        self.ascent: int = config_data['ascent']
+        self.descent: int = config_data['descent']
         assert (self.line_height - self.size) % 2 == 0, f"Font config '{self.name}': the difference between 'line_height' and 'size' must be a multiple of 2"
-        self.box_origin_y: int = config_data['box_origin_y']
-        self.ascent = self.box_origin_y + (self.line_height - self.size) // 2
-        self.descent = self.ascent - self.line_height
         self.x_height: int = config_data['x_height']
         self.cap_height: int = config_data['cap_height']
 
         self.outputs_dir = os.path.join(path_define.outputs_dir, self.outputs_name)
+
+    @property
+    def line_height(self) -> int:
+        return self.ascent - self.descent
