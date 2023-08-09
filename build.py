@@ -13,8 +13,8 @@ def main():
 
     for font_config in configs.font_configs:
         font_service.format_glyph_files(font_config)
-        character_mapping, glyph_file_paths = font_service.collect_glyph_files(font_config)
-        font_service.make_font_files(font_config, character_mapping, glyph_file_paths)
+        character_mapping, glyph_file_infos = font_service.collect_glyph_files(font_config)
+        font_service.make_font_files(font_config, character_mapping, glyph_file_infos)
     publish_service.make_release_zips()
 
 
