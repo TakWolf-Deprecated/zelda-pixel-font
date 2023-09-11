@@ -46,8 +46,12 @@ def collect_glyph_files(font_config: FontConfig) -> tuple[dict[int, str], list[t
                 code_point = -1
             elif c_name == 'space':
                 code_point = ord(' ')
+            elif c_name == 'exclamation':
+                code_point = ord('!')
             elif c_name == 'full_stop':
                 code_point = ord('.')
+            elif c_name == 'question':
+                code_point = ord('?')
             else:
                 code_point = ord(c_name)
             registry[code_point] = glyph_file_path
